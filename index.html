@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="stylep.css">
+    <script src="https://kit.fontawesome.com/6c16f22f06.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm <span>Jashwanth Roy</span><br> From India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------about--------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="background.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p></p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>C</span></li>
+                            <li><span>Java</span></li>
+                            <li><span>Python</span></li>
+                            <li><span>Javascript</span></li>
+                            <li><span>Git & GitHub</span></li>
+                            <li><span>MySQL</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="achievements">
+                        <ul>
+                            <li><span>CodeChef</span><br><b>Rating :</b>1473<br>(2-star Global rank 43878)</li>
+                            <li><span>GeeksForGeeks :</span><br>Rank in Institute: 2</li>
+                            <li><span>LeetCode :</span>Top 31.10%</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>B.Tech</span><br>Anurag University,Hyderabad<br>Nov 2020 - Present</li>
+                            <li><span>Secondary School</span><br>Narayana Junior College, Hyderabad<br>92.1%<br>Jun 2018 - Mar 2020</li>
+                            <li><span>10th</span><br>Vignan Probodhananda Prashanti Niketan,Hyderabad<br>Jun 2017 - Mar 2018</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------contact-------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>jroy.karnati@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>9949539926</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/jashwanthroy.karnati/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jroy_karnati/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jashwanth-roy-karnati-4ab715223/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgIAAL2AXkCifbSVfUtsq-Q"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://twitter.com/JroyKarnati"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <a href="./resume.pdf" download="resume.pdf"  class="btn btn2">Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright  </p>
+        </div>
+    </div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
